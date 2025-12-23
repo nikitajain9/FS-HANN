@@ -1,0 +1,15 @@
+# datasets
+*.csv
+
+# model files
+*.h5
+*.keras
+
+# notebooks
+.ipynb_checkpoints/
+
+# python cache
+__pycache__/
+
+# system
+.DS_Store
