@@ -1,30 +1,77 @@
 # FS-HANN: Feature-Sensitive Hybrid Artificial Neural Network
 
 ## Overview
-FS-HANN is a Feature-Sensitive Hybrid Artificial Neural Network designed for
-predicting cardiovascular disease using the BRFSS 2015 dataset.
-The model focuses on achieving high recall while maintaining computational efficiency.
+FS-HANN is a Feature-Sensitive Hybrid Artificial Neural Network developed for
+cardiovascular disease (CVD) prediction using the BRFSS 2015 dataset.
+The project prioritizes **high recall (sensitivity)** while maintaining **computational efficiency**,
+making it suitable for real-world healthcare screening scenarios.
+
+---
+
+## Problem Context
+In medical prediction tasks, false negatives are costly.
+Many existing deep learning and ensemble-based approaches achieve strong accuracy
+but are computationally expensive and difficult to deploy.
+
+FS-HANN addresses this by:
+- reducing feature redundancy through statistical feature selection
+- explicitly handling severe class imbalance
+- designing a lightweight ANN architecture focused on recall optimization
+
+---
 
 ## Dataset
-- Source: BRFSS 2015 (CDC)
-- Task: Binary classification (CVD / No CVD)
-- Number of features used: 15 (after feature selection)
-- Class imbalance handled using class weights
+- **Source:** BRFSS 2015 (CDC)
+- **Task:** Binary classification (CVD / No CVD)
+- **Imbalance:** ~9:1 (Negative : Positive)
+- **Features used:** 15 (χ²-based feature selection)
+- **Imbalance handling:** Class Weights
 
-> Dataset is not included in this repository due to size constraints.
+> The dataset is not included in this repository due to size constraints.
+
+---
+
+## FS-HANN Pipeline
+![Pipeline](assets/pipeline.png)
+
+---
 
 ## Model Architecture
-- Input layer with selected features
-- Feature-sensitive hidden layers
-- Hybrid ANN design
-- Sigmoid output layer
+- Input layer defined by selected feature subset (K = 15)
+- Feature-sensitive hidden layers with regularization
+- Tapered Hybrid ANN design for efficiency
+- Sigmoid output layer for binary classification
 
-## Results
-- AUC: 0.8476
-- Recall: 0.8067
-- Reduced training time compared to baseline ANN
+---
+
+## Results Overview
+
+**Performance trade-offs across feature sizes and imbalance strategies (z-scored):**
+
+![Heatmap](assets/heatmap.png)
+
+**AUC vs Recall comparison highlighting recall-driven configurations:**
+
+![AUC vs Recall](assets/auc_recall.png)
+
+### Key Metrics (Optimal Configuration)
+- **AUC:** 0.8476  
+- **Recall:** 0.8067  
+- **Training Time:** Reduced by ~15% compared to full-feature baseline  
+
+These results validate that strategic dimensionality reduction can preserve predictive
+performance while improving efficiency.
+
+---
+
+## Documentation
+- 📄 [Case Study – Deployable FS-HANN](docs/case_study.pdf)
+- 📘 [Full Technical Paper](docs/full_paper.pdf)
+
+---
 
 ## How to Run
-1. Install dependencies:
+1. Clone the repository:
    ```bash
-   pip install -r requirements.txt
+   git clone https://github.com/<your-username>/FS-HANN.git
+   cd FS-HANN
