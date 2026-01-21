@@ -32,7 +32,7 @@ FS-HANN addresses this by:
 ---
 
 ## FS-HANN Pipeline
-![Pipeline](assets/pipeline.png)
+![Pipeline](assets/Pipeline.jpeg)
 
 ---
 
@@ -48,11 +48,11 @@ FS-HANN addresses this by:
 
 **Performance trade-offs across feature sizes and imbalance strategies (z-scored):**
 
-![Heatmap](assets/heatmap.png)
+![Heatmap](assets/HeatMap.png)
 
 **AUC vs Recall comparison highlighting recall-driven configurations:**
 
-![AUC vs Recall](assets/auc_recall.png)
+![AUC vs Recall](assets/AUCRecall.png)
 
 ### Key Metrics (Optimal Configuration)
 - **AUC:** 0.8476  
@@ -65,8 +65,8 @@ performance while improving efficiency.
 ---
 
 ## Documentation
-- 📄 [Case Study – Deployable FS-HANN](docs/case_study.pdf)
-- 📘 [Full Technical Paper](docs/full_paper.pdf)
+- 📄 [Case Study – Deployable FS-HANN](docs/Case Study_ .pdf)
+- 📘 [Comprehensive Paper](docs/Comprehensive_Paper_FS-HANN.pdf)
 
 ---
 
