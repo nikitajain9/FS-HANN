@@ -65,7 +65,7 @@ performance while improving efficiency.
 ---
 
 ## Documentation
-- 📄 [Case Study – Deployable FS-HANN](docs/Case Study_ .pdf)
+- 📄 [Case Study – Deployable FS-HANN](docs/CaseStudy.pdf)
 - 📘 [Comprehensive Paper](docs/Comprehensive_Paper_FS-HANN.pdf)
 
 ---
